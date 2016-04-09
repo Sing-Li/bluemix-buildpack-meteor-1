@@ -115,7 +115,7 @@ echo "Installing meteor" | indent
 VENDORED_METEOR="$(mktmpdir meteor)"
 
 
-cat "$BUILD_DIR/.meteor/release
+cat "$BUILD_DIR/.meteor/release"
 
 APP_RELEASE=`cat "$BUILD_DIR/.meteor/release"`
 
