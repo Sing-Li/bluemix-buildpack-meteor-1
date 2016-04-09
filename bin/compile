@@ -115,9 +115,9 @@ echo "Installing meteor" | indent
 VENDORED_METEOR="$(mktmpdir meteor)"
 
 
-cat "$BUILD_DIR/.meteor/release"
-
-APP_RELEASE=`cat "$BUILD_DIR/.meteor/release"`
+# cat "$BUILD_DIR/.meteor/release" # e.g. METEOR@1.2.1
+APP_RELEASE=${`cat "$BUILD_DIR/.meteor/release"`#METEOR@} # remove "METEOR@"
+echo "APP_RELEASE=$APP_RELEASE"
 
 curl -# https://install.meteor.com?release=1.2.1 | HOME="$VENDORED_METEOR" /bin/sh | indent
 echo "Meteor $APP_RELEASE installed" | indent
