@@ -113,8 +113,12 @@ echo "Installing meteor" | indent
 
 # Using different folder to prevent install script form deleting packages file
 VENDORED_METEOR="$(mktmpdir meteor)"
-curl -# https://install.meteor.com | HOME="$VENDORED_METEOR" /bin/sh | indent
-echo "Meteor installed" | indent
+
+
+APP_RELEASE=`cat "$BUILD_DIR/.meteor/release"`
+
+curl -# "https://install.meteor.com?release=$APP_RELEASE" | HOME="$VENDORED_METEOR" /bin/sh | indent
+echo "Meteor $APP_RELEASE installed" | indent
 
 echo "Ignoring build of mobile platforms"
 sed -i '/^ios$/d;/^android$/d' ./.meteor/platforms
