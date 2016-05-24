@@ -143,6 +143,7 @@ cat | tee "$BUILD_DIR"/.profile.d/mongo.sh <<EOF
 
   export ROOT_URL=`echo \$ROOT_URL`
   export MONGO_URL=`echo \$MONGO_URL`
+  export
 
 EOF
 
