@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
+echo "$MONGO_URL"
+echo "$ROOT_URL"
+echo "$PORT"
+.meteor/mteor_build/bin/node -v
+
+
 cat <<EOF
 ---
 addons:
